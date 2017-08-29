@@ -1,0 +1,32 @@
+{
+  "name": "cheslie-endgame",
+  "version": "1.0.0",
+  "description": " Syzygy endgame tablebase API",
+  "main": "endgame-server.js",
+  "scripts": {
+    "test": "mocha test",
+    "dev": "node endgame-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheslie-team/cheslie-endgame.git"
+  },
+  "keywords": [
+    "Chess",
+    "endagme",
+    "syzygy"
+  ],
+  "author": "Simen Granlund",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cheslie-team/cheslie-endgame/issues"
+  },
+  "homepage": "https://github.com/cheslie-team/cheslie-endgame#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "cheslie-config": "^1.0.*",
+    "chess.js": "^0.10.2",
+    "mocha": "^3.2.0",
+    "socket.io": "^1.7.3"    
+  }
+}
