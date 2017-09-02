@@ -8,7 +8,7 @@ class Syzygy():
         print('Loading syzygy tablebases ...')
         self.syzygy = chess.syzygy.Tablebases()
 
-        path = 'databases/syzygy/four-men'
+        path = 'CheslieEndgame/databases/syzygy/four-men'
         num = self.syzygy.open_directory(path)
         print('* Loaded %d syzygy tablebases from %r' % (num, path))
 

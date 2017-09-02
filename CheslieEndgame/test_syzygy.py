@@ -3,6 +3,7 @@ import chess
 from syzygy import Syzygy
 
 
+
 class TestSyzygy(unittest.TestCase):
 
     def test_bestmove_black(self):

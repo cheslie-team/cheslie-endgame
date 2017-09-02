@@ -1,9 +1,10 @@
 from flask import Flask
 from flask_restplus import Api, Resource, fields
-from syzygy import Syzygy
 import chess
 
-app = Flask(__name__)
+from syzygy import Syzygy
+from CheslieEndgame import app
+
 api = Api(app, version='1.0', title='Cheslie endgame API',
           description='Probe endgame databases',)
 
