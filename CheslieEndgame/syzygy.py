@@ -20,7 +20,7 @@ class Syzygy():
             print('Downloading syzygy tablebases ...')
             with open(os.path.join(PATH5,'SOURCE.txt')) as fn:
                 urls = [url.strip() for url in fn.readlines()]
-            for url in urls:
+            for url in [urls[0]]:
                 filename = wget.download(url, out=PATH5)
                 print(filename)
         
