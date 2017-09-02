@@ -25,6 +25,9 @@ class Syzygy():
         result['dtz'] = self.syzygy.get_dtz(board)
         result['moves'] = [self.get_dtz_move(board,move) for move in board.legal_moves]
         
+        if result['wdl'] == None:
+            return None
+
         best_moves = []
         if result['wdl'] == 0:
             best_moves = [dtzMove for dtzMove in  result['moves'] if dtzMove['dtz']==0]

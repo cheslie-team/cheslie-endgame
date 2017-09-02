@@ -26,13 +26,18 @@ class probeDAO(object):
         self.syzygy = Syzygy()
 
     def get(self, fen):
-        board = chess.Board(fen)
-        return self.syzygy.probe(board)
-        # api.abort(404, "Endgame {} doesn't exist".format(id))
+        try:
+            board = chess.Board(fen)
+        except ValueError:
+            api.abort(404, "Illegal fen:  {}".format(fen))
+
+        best_move =  self.syzygy.probe(board)
+        if best_move is None:
+            api.abort(404, "Board with fen, {}, not found in database".format(fen))
+        return best_move
 
 
 DAO = probeDAO()
-
 
 @ns.route('/syzygy')
 @ns.response(404, 'Endgame database not found')
