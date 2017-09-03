@@ -3,8 +3,8 @@ import chess.syzygy
 import os
 import wget
 
-PATH4 = 'CheslieEndgame/databases/syzygy/four-men/'
-PATH5 = 'CheslieEndgame/databases/syzygy/five-men/'
+PATH4 = 'CheslieEndgame/databases/syzygyTB/four-men/'
+PATH5 = 'CheslieEndgame/databases/syzygyTB/five-men/'
 
 
 class Syzygy():
@@ -15,15 +15,6 @@ class Syzygy():
 
     def init_syzygy(self):
         self.syzygy = chess.syzygy.Tablebases()
-
-        if len(os.listdir(PATH5))< 70:
-            print('Downloading syzygy tablebases ...')
-            with open(os.path.join(PATH5,'SOURCE.txt')) as fn:
-                urls = [url.strip() for url in fn.readlines()]
-            for url in [urls[0]]:
-                filename = wget.download(url, out=PATH5)
-                print(filename)
-        
         print('Loading syzygy tablebases ...')
         for path in [PATH4, PATH5]:
             num = self.syzygy.open_directory(path)
